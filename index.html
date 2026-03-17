@@ -2,145 +2,85 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>20 000 ₽ за рекомендацию | Партнерская программа</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Партнерская программа | Юлия Зернова</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap');
-        body { margin: 0; background-color: #050505; color: #ffffff; font-family: 'Manrope', sans-serif; overflow-x: hidden; }
-        .glare-effect { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 80vw; height: 50vh; background: radial-gradient(ellipse at top, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%); pointer-events: none; z-index: 0; }
-        .fade-in-up { animation: fadeInUp 1s ease-out forwards; opacity: 0; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Manrope', sans-serif; }
+        .glare { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 500px; background: radial-gradient(circle at top, rgba(93,27,132,0.15) 0%, transparent 70%); pointer-events: none; }
     </style>
 </head>
-<body class="selection:bg-yellow-400 selection:text-black">
-    <div id="root"></div>
+<body>
+    <div class="glare"></div>
 
-    <script type="text/babel">
-        const { useState } = React;
+    <section class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 text-center py-20">
+        <p class="text-yellow-400 text-xs font-bold uppercase tracking-[0.3em] mb-6">Партнерская программа</p>
+        <h1 class="text-3xl md:text-6xl font-black uppercase mb-4 leading-tight">Честная благодарность <br><span class="text-white/70 italic font-light font-serif">за доверие</span></h1>
+        <p class="text-gray-400 text-sm md:text-lg mb-12 max-w-2xl mx-auto italic">«Качество услуги определяется не тем, что в неё вложил исполнитель, а тем, что из неё извлек заказчик»</p>
+        
+        <div class="relative mb-16">
+            <h2 class="text-7xl md:text-[11rem] font-black leading-none text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600">20 000<span class="text-yellow-500">₽</span></h2>
+            <div class="absolute -top-4 -right-4 bg-white text-black text-[10px] font-black py-2 px-4 rounded-full rotate-12 uppercase">Вам на карту</div>
+        </div>
 
-        const IconArrowDown = ({size=24}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>;
-        const IconSend = ({size=24}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>;
-        const IconMessage = ({size=24}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>;
-        const IconStar = ({size=24}) => <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>;
+        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+            <a href="#contact" class="w-full bg-yellow-400 text-black py-5 rounded-2xl font-black uppercase text-sm text-center shadow-lg hover:bg-yellow-300 transition-all">Рекомендовать</a>
+            <a href="#steps" class="w-full bg-white/5 border border-white/20 text-white py-5 rounded-2xl font-bold uppercase text-xs text-center hover:bg-white/10 transition-all">Как это работает ↓</a>
+        </div>
+    </section>
 
-        function App() {
-            const scrollToSteps = () => document.getElementById('steps-section').scrollIntoView({ behavior: 'smooth' });
-            const scrollToContact = () => document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });
+    <section id="steps" class="py-20 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-black uppercase mb-4 tracking-tighter">4 простых шага</h2>
+            <p class="text-yellow-400 font-bold uppercase text-[10px] tracking-widest">к вашей заслуженной выплате</p>
+        </div>
 
-            return (
-                <div className="relative w-full">
-                    <div className="glare-effect"></div>
-                    <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#5D1B84]/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
-                    
-                    {/* HERO SECTION */}
-                    <section className="relative z-10 min-h-[100dvh] flex flex-col items-center justify-center px-4 text-center py-10 pb-16">
-                        <div className="max-w-4xl mx-auto fade-in-up">
-                            <p className="text-yellow-400 text-xs md:text-sm font-bold uppercase tracking-[0.3em] mb-6">Партнерская программа</p>
-                            <h1 className="text-3xl md:text-6xl font-black uppercase mb-4 leading-tight">Честная благодарность <br/><span className="text-white/70 italic font-light">за доверие</span></h1>
-                            <p className="text-gray-400 text-sm md:text-lg mb-12 max-w-2xl mx-auto italic font-light">«Качество услуги определяется не тем, что в неё вложил исполнитель, а тем, что из неё извлек заказчик»</p>
-                            
-                            <div className="relative mb-16 group cursor-default">
-                                <div className="absolute inset-0 bg-yellow-400/20 blur-[60px] rounded-full"></div>
-                                <h2 className="text-[5.5rem] md:text-[11rem] font-black leading-none text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 to-yellow-600">20 000<span className="text-yellow-500/80">₽</span></h2>
-                                <div className="absolute -top-4 -right-4 bg-white text-black text-[10px] font-black py-2 px-4 rounded-full rotate-12 uppercase">Вам на карту</div>
-                            </div>
-                            
-                            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto z-20 relative">
-                                <button onClick={scrollToContact} class="w-full bg-yellow-400 text-black py-5 rounded-2xl font-black uppercase text-sm shadow-lg hover:bg-yellow-300 transition-all active:scale-95">Рекомендовать</button>
-                                <button onClick={scrollToSteps} class="w-full bg-white/5 border border-white/20 text-white py-5 rounded-2xl font-bold uppercase text-xs flex items-center justify-center gap-2 hover:bg-white/10 transition-all">Как это работает <IconArrowDown size={16}/></button>
-                            </div>
-                        </div>
-                    </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white/5 border border-white/10 p-8 rounded-[30px] relative overflow-hidden">
+                <span class="absolute -top-4 -right-4 text-6xl font-black text-white/5 italic">01</span>
+                <h3 class="text-xl font-black mb-4">Порекомендуйте меня</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Расскажите обо мне другу, родственнику или коллеге, которому нужно выгодно купить, продать недвижимость или оформить сложную ипотеку. Моя специализация — сложные кейсы и работа на результат.</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-[30px] relative overflow-hidden md:mt-12">
+                <span class="absolute -top-4 -right-4 text-6xl font-black text-white/5 italic">02</span>
+                <h3 class="text-xl font-black mb-4">Передайте контакт</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Напишите мне в любой удобный мессенджер и передайте контакт знакомого (с его согласия) или просто отправьте ему мою визитку. Я свяжусь и предложу лучшее решение его вопроса.</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 p-8 rounded-[30px] relative overflow-hidden">
+                <span class="absolute -top-4 -right-4 text-6xl font-black text-white/5 italic">03</span>
+                <h3 class="text-xl font-black mb-4">Процесс работы</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Я провожу бесплатную экспертную консультацию. Если условия подходят, мы начинаем работу. Вы будете знать, что ваш человек в надежных руках профессионала.</p>
+            </div>
+            <div class="bg-gradient-to-br from-purple-900/40 to-black border border-purple-500/50 p-8 rounded-[30px] relative overflow-hidden md:mt-12 shadow-xl">
+                <span class="absolute -top-4 -right-4 text-6xl font-black text-yellow-400/10 italic">04</span>
+                <h3 class="text-xl font-black text-yellow-400 mb-4">Сделка и выплата</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">В день успешного завершения сделки и получения моей комиссии, я мгновенно отправляю вам <span class="text-white font-bold">20 000 ₽</span> на любую удобную карту в качестве благодарности.</p>
+            </div>
+        </div>
+    </section>
 
-                    {/* STEPS SECTION - ВОССТАНОВЛЕН ПОЛНЫЙ ТЕКСТ */}
-                    <section id="steps-section" className="relative z-10 py-20 md:py-32 px-4">
-                        <div className="max-w-5xl mx-auto">
-                            <div className="text-center mb-16 md:mb-24">
-                                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">4 простых шага</h2>
-                                <p className="text-yellow-400 font-bold uppercase tracking-[0.2em] text-[10px]">к вашей заслуженной выплате</p>
-                            </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-y-16">
-                                <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[30px] relative overflow-hidden group">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-white/5 italic group-hover:text-yellow-400/5 transition-colors">01</div>
-                                    <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10">Порекомендуйте меня</h3>
-                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10 font-light">
-                                        Расскажите обо мне другу, родственнику или коллеге, которому нужно выгодно купить, продать недвижимость или оформить сложную ипотеку. 
-                                        Моя специализация — сложные кейсы и работа на результат.
-                                    </p>
-                                </div>
-
-                                <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[30px] relative overflow-hidden group mt-0 md:mt-12">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-white/5 italic group-hover:text-yellow-400/5 transition-colors">02</div>
-                                    <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10">Передайте контакт</h3>
-                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10 font-light">
-                                        Напишите мне в любой удобный мессенджер и передайте контакт знакомого (с его согласия) или просто отправьте ему мою визитку. 
-                                        Я свяжусь и предложу лучшее решение его вопроса.
-                                    </p>
-                                </div>
-
-                                <div className="bg-white/5 border border-white/10 p-8 md:p-10 rounded-[30px] relative overflow-hidden group">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-white/5 italic group-hover:text-yellow-400/5 transition-colors">03</div>
-                                    <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10">Процесс работы</h3>
-                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10 font-light">
-                                        Я провожу бесплатную экспертную консультацию. Если условия подходят, мы начинаем работу. 
-                                        Вы будете знать, что ваш человек в надежных руках профессионала.
-                                    </p>
-                                </div>
-
-                                <div className="bg-gradient-to-br from-[#5D1B84]/40 to-black border border-[#5D1B84]/50 p-8 md:p-10 rounded-[30px] relative overflow-hidden group mt-0 md:mt-12 shadow-[0_0_40px_rgba(93,27,132,0.2)]">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-yellow-400/10 italic">04</div>
-                                    <h3 className="text-xl md:text-2xl font-black text-yellow-400 mb-4 relative z-10">Сделка и выплата</h3>
-                                    <p className="text-gray-300 text-sm md:text-base leading-relaxed relative z-10">
-                                        В день успешного завершения сделки и получения моей комиссии, я мгновенно отправляю вам 
-                                        <span className="font-bold text-white mx-1">20 000 ₽</span> 
-                                        на любую удобную карту в качестве искренней благодарности.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* CONTACT SECTION */}
-                    <section id="contact-section" className="relative z-10 py-16 md:py-32 px-4 bg-white/[0.02] border-t border-white/5">
-                        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
-                            <div className="relative w-64 md:w-96 shrink-0">
-                                <div className="absolute inset-0 bg-gradient-to-tr from-[#5D1B84]/40 to-yellow-400/40 blur-[60px] opacity-50"></div>
-                                <img src="download.png" alt="Юлия Зернова" className="w-full h-auto object-contain relative z-10" />
-                            </div>
-
-                            <div className="max-w-xl text-center md:text-left">
-                                <h2 className="text-3xl md:text-6xl font-black uppercase mb-6 leading-tight tracking-tighter text-white">Сделаем <br className="hidden md:block"/>хорошее дело?</h2>
-                                <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-10 font-light">
-                                    Если среди вашего окружения есть те, кто планирует переезд, покупку инвестиционной недвижимости или продажу квартиры — просто напишите мне. 
-                                    Я помогу им пройти этот путь безопасно, выгодно и без стресса.
-                                </p>
-                                
-                                <div className="flex flex-col gap-4">
-                                    <a href="https://vk.com/ya_yuuliya" target="_blank" class="flex items-center justify-center gap-4 bg-blue-600/20 border border-blue-600/40 text-blue-400 py-4 px-8 rounded-2xl font-bold uppercase text-[10px] tracking-widest shadow-lg hover:bg-blue-600 hover:text-white transition-all active:scale-95"><IconMessage size={18}/> Вконтакте</a>
-                                    <a href="https://t.me/ya_yuuliya" target="_blank" class="flex items-center justify-center gap-4 bg-sky-600/20 border border-sky-600/40 text-sky-400 py-4 px-8 rounded-2xl font-bold uppercase text-[10px] tracking-widest shadow-lg hover:bg-sky-600 hover:text-white transition-all active:scale-95"><IconSend size={18}/> Telegram</a>
-                                    <a href="https://t.me/zernova_invest" target="_blank" class="flex items-center justify-center gap-3 bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 py-4 px-8 rounded-2xl font-bold uppercase text-[10px] tracking-widest hover:bg-yellow-400 hover:text-black transition-all active:scale-95"><IconStar size={18}/> Мой канал в ТГ</a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <footer className="py-12 text-center border-t border-white/5 bg-black">
-                        <p className="text-[10px] uppercase tracking-[0.4em] font-extrabold opacity-40">Юлия Зернова • Эксперт в недвижимости</p>
-                    </footer>
+    <section id="contact" class="py-20 px-4 bg-white/[0.02] border-t border-white/5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-24">
+            <div class="relative w-64 md:w-80 shrink-0">
+                <div class="absolute inset-0 bg-yellow-400/20 blur-[60px]"></div>
+                <img src="download.png" alt="Юлия Зернова" class="w-full relative z-10 rounded-2xl">
+            </div>
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl md:text-6xl font-black uppercase mb-6 leading-tight">Сделаем <br>хорошее дело?</h2>
+                <p class="text-gray-400 mb-10 font-light">Если среди вашего окружения есть те, кто планирует переезд, покупку инвестиционной недвижимости или продажу квартиры — просто напишите мне. Я помогу им пройти этот путь безопасно.</p>
+                
+                <div class="flex flex-col gap-4 max-w-xs mx-auto md:mx-0">
+                    <a href="https://vk.com/ya_yuuliya" target="_blank" class="bg-blue-600 py-4 px-8 rounded-2xl font-bold uppercase text-[10px] tracking-widest text-center hover:bg-blue-500 transition-all">Вконтакте</a>
+                    <a href="https://t.me/ya_yuuliya" target="_blank" class="bg-sky-500 py-4 px-8 rounded-2xl font-bold uppercase text-[10px] tracking-widest text-center hover:bg-sky-400 transition-all">Telegram</a>
+                    <a href="https://t.me/zernova_invest" target="_blank" class="border border-yellow-400/30 text-yellow-400 py-4 px-8 rounded-2xl font-bold uppercase text-[10px] tracking-widest text-center hover:bg-yellow-400 hover:text-black transition-all">Мой канал в ТГ</a>
                 </div>
-            );
-        }
+            </div>
+        </div>
+    </section>
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
+    <footer class="py-12 text-center opacity-40 border-t border-white/5">
+        <p class="text-[10px] uppercase tracking-[0.4em] font-bold">Юлия Зернова • Эксперт в недвижимости</p>
+    </footer>
 </body>
 </html>
