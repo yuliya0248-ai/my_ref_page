@@ -70,6 +70,8 @@
         const IconStar = ({size=24, className=""}) => <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>;
 
         function App() {
+            const [imgError, setImgError] = useState(false);
+
             const scrollToSteps = () => {
                 document.getElementById('steps-section').scrollIntoView({ behavior: 'smooth' });
             };
@@ -124,98 +126,4 @@
                                 
                                 <button 
                                     onClick={scrollToSteps}
-                                    className="w-full bg-white/5 hover:bg-white/10 border border-white/20 text-white py-5 px-8 rounded-2xl font-bold uppercase text-xs tracking-[0.1em] backdrop-blur-md transition-all flex items-center justify-center gap-2"
-                                >
-                                    Как это работает <IconArrowDown size={16} />
-                                </button>
-                            </div>
-                            
-                        </div>
-                    </section>
-
-                    {/* --- БЛОК B: ШАГИ (Как получить) --- */}
-                    <section id="steps-section" className="relative z-10 py-20 md:py-32 px-4 md:px-6">
-                        <div className="max-w-5xl mx-auto">
-                            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-16 text-center">
-                                4 простых шага <br/><span className="text-[#9d4edd] italic">к вашему бонусу</span>
-                            </h2>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                                
-                                {/* Шаг 1 */}
-                                <div className="bg-white/5 border border-white/10 backdrop-blur-xl p-8 md:p-10 rounded-[30px] relative overflow-hidden group hover:border-yellow-400/30 transition-colors">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-white/5 italic group-hover:text-yellow-400/10 transition-colors">01</div>
-                                    <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10">Порекомендуйте меня</h3>
-                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10">
-                                        Расскажите обо мне другу, родственнику или коллеге, которому нужно выгодно купить, продать недвижимость или оформить сложную ипотеку.
-                                    </p>
-                                </div>
-
-                                {/* Шаг 2 */}
-                                <div className="bg-white/5 border border-white/10 backdrop-blur-xl p-8 md:p-10 rounded-[30px] relative overflow-hidden group hover:border-[#9d4edd]/50 transition-colors mt-0 md:mt-12">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-white/5 italic group-hover:text-[#9d4edd]/20 transition-colors">02</div>
-                                    <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10">Передайте контакт</h3>
-                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10">
-                                        Напишите мне в любой удобный мессенджер и передайте контакт знакомого (с его согласия) или просто отправьте ему мою визитку.
-                                    </p>
-                                </div>
-
-                                {/* Шаг 3 */}
-                                <div className="bg-white/5 border border-white/10 backdrop-blur-xl p-8 md:p-10 rounded-[30px] relative overflow-hidden group hover:border-[#9d4edd]/50 transition-colors">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-white/5 italic group-hover:text-[#9d4edd]/20 transition-colors">03</div>
-                                    <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10">Процесс работы</h3>
-                                    <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10">
-                                        Я связываюсь с вашим другом, провожу бесплатную экспертную консультацию и мы начинаем комфортную работу по его запросу.
-                                    </p>
-                                </div>
-
-                                {/* Шаг 4 (Акцентный) */}
-                                <div className="bg-gradient-to-br from-[#5D1B84]/40 to-black border border-[#5D1B84]/50 backdrop-blur-xl p-8 md:p-10 rounded-[30px] relative overflow-hidden group mt-0 md:mt-12 shadow-[0_0_40px_rgba(93,27,132,0.2)]">
-                                    <div className="absolute -top-10 -right-10 text-[8rem] font-black text-yellow-400/10 italic">04</div>
-                                    <h3 className="text-xl md:text-2xl font-black text-yellow-400 mb-4 relative z-10">Сделка и выплата</h3>
-                                    <p className="text-gray-300 text-sm md:text-base leading-relaxed relative z-10">
-                                        В день успешного завершения сделки и получения комиссии, я отправляю вам <span className="font-bold text-white">20 000 ₽</span> на любую удобную карту в качестве благодарности.
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <p className="text-center text-[10px] text-gray-500 uppercase tracking-widest mt-12 opacity-60">
-                                * Выплата производится по факту завершения сделки и поступления комиссионного вознаграждения.
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* --- БЛОК C: КОНТАКТЫ И ФОТО --- */}
-                    <section id="contact-section" className="relative z-10 py-16 md:py-24 px-4 md:px-6 bg-white/5 border-t border-white/5">
-                        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
-                            
-                            {/* Крупное фото в полный рост без рамки */}
-                            <div className="relative group w-64 sm:w-80 md:w-96 shrink-0 flex justify-center">
-                                <div className="absolute inset-0 bg-gradient-to-tr from-[#5D1B84]/40 to-yellow-400/40 blur-[60px] group-hover:blur-[80px] transition-all duration-700"></div>
-                                <img 
-                                    src="download.png"
-                                    alt="Юлия Зернова" 
-                                    className="w-full h-auto object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-700 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
-                                />
-                            </div>
-
-                            {/* Текст и кнопки */}
-                            <div className="max-w-xl text-center md:text-left">
-                                <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6">
-                                    Сделаем <br className="hidden md:block"/>хорошее дело?
-                                </h2>
-                                <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-10">
-                                    Если среди вашего окружения есть те, кто планирует переезд, покупку инвестиционной недвижимости или продажу квартиры — просто напишите мне. Я свяжусь с ними и помогу пройти этот путь безопасно и выгодно.
-                                </p>
-                                
-                                <div className="flex flex-col gap-4 w-full">
-                                    <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 w-full">
-                                        <a href="https://vk.com/ya_yuuliya" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 bg-blue-600/20 border border-blue-600/40 hover:bg-blue-600 hover:text-white text-blue-400 py-4 px-8 rounded-2xl transition-all hover:scale-105 font-bold tracking-widest text-xs uppercase w-full sm:w-auto shadow-lg">
-                                            <IconMessage size={18} /> ВК
-                                        </a>
-                                        <a href="https://t.me/ya_yuuliya" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 bg-sky-600/20 border border-sky-600/40 hover:bg-sky-600 hover:text-white text-sky-400 py-4 px-8 rounded-2xl transition-all hover:scale-105 font-bold tracking-widest text-xs uppercase w-full sm:w-auto shadow-lg">
-                                            <IconSend size={18} /> Telegram
-                                        </a>
-                                    </div>
-                                    <div
+                                    className="w-full bg-white/5 hover:bg-
