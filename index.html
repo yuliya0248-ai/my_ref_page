@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>20 000 ₽ за рекомендацию | Партнерская программа</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- React & ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     
-    <!-- Babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <style>
@@ -73,8 +70,6 @@
         const IconStar = ({size=24, className=""}) => <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>;
 
         function App() {
-            const [imgError, setImgError] = useState(false);
-
             const scrollToSteps = () => {
                 document.getElementById('steps-section').scrollIntoView({ behavior: 'smooth' });
             };
@@ -199,8 +194,7 @@
                             <div className="relative group w-64 sm:w-80 md:w-96 shrink-0 flex justify-center">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-[#5D1B84]/40 to-yellow-400/40 blur-[60px] group-hover:blur-[80px] transition-all duration-700"></div>
                                 <img 
-                                    src={imgError ? "https://drive.google.com/uc?export=view&id=1QdLNh81iqUMrze6bnR4VRwd9HXuC0YqH" : "https://lh3.googleusercontent.com/u/0/d/1QdLNh81iqUMrze6bnR4VRwd9HXuC0YqH=w1000-h1000-iv1"}
-                                    onError={() => setImgError(true)}
+                                    src="download.png"
                                     alt="Юлия Зернова" 
                                     className="w-full h-auto object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-700 drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]"
                                 />
@@ -217,44 +211,11 @@
                                 
                                 <div className="flex flex-col gap-4 w-full">
                                     <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 w-full">
-                                        <a href="https://vk.com/ya_yuuliya" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 bg-emerald-600/20 border border-emerald-600/40 hover:bg-emerald-600 hover:text-white text-emerald-400 py-4 px-8 rounded-2xl transition-all hover:scale-105 font-bold tracking-widest text-xs uppercase w-full sm:w-auto shadow-lg">
+                                        <a href="https://vk.com/ya_yuuliya" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 bg-blue-600/20 border border-blue-600/40 hover:bg-blue-600 hover:text-white text-blue-400 py-4 px-8 rounded-2xl transition-all hover:scale-105 font-bold tracking-widest text-xs uppercase w-full sm:w-auto shadow-lg">
                                             <IconMessage size={18} /> ВК
                                         </a>
                                         <a href="https://t.me/ya_yuuliya" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-4 bg-sky-600/20 border border-sky-600/40 hover:bg-sky-600 hover:text-white text-sky-400 py-4 px-8 rounded-2xl transition-all hover:scale-105 font-bold tracking-widest text-xs uppercase w-full sm:w-auto shadow-lg">
                                             <IconSend size={18} /> Telegram
                                         </a>
                                     </div>
-                                    <div className="flex items-center justify-center md:justify-start w-full mt-2">
-                                        <a href="https://t.me/zernova_invest" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-yellow-400/10 border border-yellow-400/30 hover:bg-yellow-400 hover:text-black text-yellow-400 py-4 px-8 rounded-2xl transition-all hover:scale-105 font-bold tracking-widest text-xs uppercase w-full sm:w-auto shadow-[0_0_20px_rgba(234,179,8,0.15)]">
-                                            <IconStar size={18} /> Мой канал в ТГ
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </section>
-
-                    {/* Футер */}
-                    <footer className="relative z-10 py-10 border-t border-white/10 text-center flex flex-col items-center">
-                        <div className="mb-4 w-12 h-12 rounded-full overflow-hidden border border-white/20">
-                            <img 
-                                src={imgError ? "https://drive.google.com/uc?export=view&id=1QdLNh81iqUMrze6bnR4VRwd9HXuC0YqH" : "https://lh3.googleusercontent.com/u/0/d/1QdLNh81iqUMrze6bnR4VRwd9HXuC0YqH=w1000-h1000-iv1"} 
-                                alt="Юлия Зернова" 
-                                className="w-full h-full object-cover object-top opacity-50 grayscale"
-                            />
-                        </div>
-                        <p className="text-[10px] text-gray-600 uppercase tracking-[0.3em] font-bold">
-                            Юлия Зернова • Эксперт в недвижимости
-                        </p>
-                    </footer>
-
-                </div>
-            );
-        }
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
-    </script>
-</body>
-</html>
+                                    <div
